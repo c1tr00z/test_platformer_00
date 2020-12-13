@@ -1,0 +1,3 @@
+[submodule "TestPlatformerUnity3D/Assets/AssistLib"]
+	path = TestPlatformerUnity3D/Assets/AssistLib
+	url = git@github.com:c1tr00z/assist-lib-git-submodule.git
