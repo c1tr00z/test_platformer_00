@@ -10,6 +10,12 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public float playerSpeed;
 
+        public float maxEnergy;
+
+        public float energyReplenishSpeed;
+
+        public float clickToDestructablePrice;
+
         #endregion
 
     }

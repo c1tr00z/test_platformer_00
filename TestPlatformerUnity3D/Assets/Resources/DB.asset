@@ -14,15 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paths:
   - DB
+  - FinishFrame
   - GameplaySettings
   - GameScene
-  - Level/LevelGeneratingSettings
-  - Level/Pieces/LevelPieceRegular00
-  - Level/Pieces/StartPiece
+  - JumpPod
+  - LevelGeneratingSettings
   - MainLayer
+  - Modules/Input
   - Modules/Scenes
   - Modules/UI
+  - Pieces/LevelPieceRegular00
+  - Pieces/LevelPiecPit00
+  - Pieces/LevelPiecWall00
+  - Pieces/LevelPiecWall01
+  - Pieces/StartPiece
   - Player
   - PlayFrame
+  - SceneObjectListItem
+  - SceneObjectsUIFrame
   - StartFrame
   - UIDefaults

@@ -56,6 +56,19 @@
        id="Circle"
        cx="48.380955"
        cy="68.791664"
-       r="21.922617" />
+       r="21.922617"
+       inkscape:export-filename="/Users/c1tr00z/Downloads/Circle_128.png"
+       inkscape:export-xdpi="74.150002"
+       inkscape:export-ydpi="74.150002" />
+    <path
+       id="path1440"
+       style="opacity:0.98;fill:#ffffff;stroke-width:0.587328"
+       inkscape:transform-center-x="3.0026815"
+       inkscape:transform-center-y="1.075599"
+       d="M 189.24545,181.23886 155.30892,150.21395 123.64024,180.42119 140.97927,79.495218 98.675237,89.6301 155.29449,1.2478229 214.08802,89.055541 170.38009,81.037982 Z"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="/Users/c1tr00z/Downloads/Jump.png"
+       inkscape:export-xdpi="18.063122"
+       inkscape:export-ydpi="18.063122" />
   </g>
 </svg>

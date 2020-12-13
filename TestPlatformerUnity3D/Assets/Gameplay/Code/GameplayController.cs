@@ -6,11 +6,28 @@ using c1tr00z.AssistLib.Utils;
 using UnityEngine;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
+    /**
+     * <summary>Main gameplay controller</summary>
+     */
     public class GameplayController : Module {
+
+        #region Events
+
+        public static event Action EnergyChanged;
+
+        #endregion
+
+        #region Private Fields
+
+        private GameplaySettings _settings;
+
+        private float _energy;
+
+        #endregion
 
         #region Serialized Fields
 
-        [SerializeField] private Level _level;
+        [SerializeField] private Level.Level _level;
 
         [SerializeField] private UIFrameDBEntry _startFrame;
         
@@ -20,12 +37,27 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         #endregion
 
-
         #region Accessors
 
-        public Level level => _level;
+        public Level.Level level => _level;
 
         public PlayerRunner player { get; private set; }
+
+        public GameplaySettings settings => DBEntryUtils.GetCached(ref _settings);
+
+        public float energy {
+            get => _energy;
+            set {
+                if (value > maxEnergy) {
+                    return;
+                }
+
+                _energy = Mathf.Min(maxEnergy, value);
+                EnergyChanged?.Invoke();
+            }
+        }
+
+        public float maxEnergy => settings.maxEnergy;
 
         #endregion
 
@@ -33,6 +65,10 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         private void Start() {
             Init();
+        }
+
+        private void Update() {
+            TickEnergy();
         }
 
         #endregion
@@ -47,13 +83,32 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         }
 
         public void Play() {
+            energy = maxEnergy;
             _playFrame.Show();
             player.Run();
         }
 
         public void Finish() {
             _finishFrame.Show();
-            player.Stop();
+            player.FullStop();
+        }
+
+        private void TickEnergy() {
+            if (energy >= settings.maxEnergy) {
+                return;
+            }
+            
+            energy += settings.energyReplenishSpeed * Time.deltaTime;
+        }
+
+        public bool TryDecreaseEnergy(float value) {
+            if (energy < value) {
+                return false;
+            }
+
+            energy -= value;
+
+            return true;
         }
 
         #endregion

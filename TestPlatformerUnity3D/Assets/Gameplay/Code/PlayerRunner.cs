@@ -24,6 +24,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         private GameplaySettings _gameplaySettings;
 
+        private bool _isRunning;
+
         #endregion
 
         #region Accessors
@@ -32,9 +34,9 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         private GameplaySettings gameplaySettings => DBEntryUtils.GetCached(ref _gameplaySettings);
 
-        public bool isRunning {
-            get => !rigidbody2D.isKinematic;
-            private set => rigidbody2D.isKinematic = false;
+        public bool isRunning {//Checking if character can run and rigidbody not kinematic
+            get => _isRunning && !rigidbody2D.isKinematic;
+            private set => _isRunning = value;
         }
 
         #endregion
@@ -44,6 +46,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         private void Awake() {
             PlayerSpawned?.Invoke(this);
             isRunning = false;
+            rigidbody2D.isKinematic = true;
         }
 
         private void LateUpdate() {
@@ -55,6 +58,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         #region Class Implementation
 
         public void Run() {
+            rigidbody2D.isKinematic = false;
             isRunning = true;
         }
 
@@ -63,12 +67,18 @@ namespace c1tr00z.TestPlatformer.Gameplay {
                 return;
             }
 
+            //Keeping constant horizontal velocity
             var currentVelocity = rigidbody2D.velocity;
             currentVelocity.x = gameplaySettings.playerSpeed;
             rigidbody2D.velocity = currentVelocity;
         }
 
-        public void Stop() {
+        public void FullStop() {
+            isRunning = false;
+            rigidbody2D.isKinematic = true;
+        }
+
+        public void StopRunning() {
             isRunning = false;
         }
 

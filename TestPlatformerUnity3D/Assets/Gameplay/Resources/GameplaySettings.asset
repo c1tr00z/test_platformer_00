@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: GameplaySettings
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  maxEnergy: 10
+  energyReplenishSpeed: 0.5
+  clickToDestructablePrice: 0
