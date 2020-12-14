@@ -1,4 +1,3 @@
-using System;
 using c1tr00z.AssistLib.AppModules;
 using c1tr00z.TestPlatformer.Level;
 using UnityEngine;

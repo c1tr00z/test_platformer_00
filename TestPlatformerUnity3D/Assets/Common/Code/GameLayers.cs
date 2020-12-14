@@ -1,4 +1,7 @@
 namespace c1tr00z.TestPlatformer.Common {
+    /**
+     * Class with game layers.
+     */
     public class GameLayers {
 
         #region Readonly Fields

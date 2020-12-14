@@ -4,6 +4,9 @@ using c1tr00z.AssistLib.Utils;
 using UnityEngine;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
+    /**
+     * <summary>Enemy spawner class. Object supposed to be in LevelPiece.</summary>
+     */
     public class EnemySpawner : MonoBehaviour {
 
         #region Private Fields
@@ -22,6 +25,9 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         #region Class Implementation
 
+        /**
+         * <summary>Every OnEnable checks if enemy was spawned. If not - spawn it.</summary>
+         */
         private void CheckSpawn() {
             if (_enemy.IsAssigned()) {
                 return;

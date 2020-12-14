@@ -4,12 +4,14 @@ using System.Linq;
 using c1tr00z.AssistLib.AppModules;
 using c1tr00z.AssistLib.ResourcesManagement;
 using c1tr00z.AssistLib.Utils;
-using c1tr00z.TestPlatformer.Gameplay;
 using c1tr00z.TestPlatformer.Level;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Bonuses.Code {
+    /**
+     * <summary>Controls everything about bonuses.</summary>
+     */
     public class BonusesController : Module {
 
         #region Events
@@ -24,8 +26,14 @@ namespace Bonuses.Code {
 
         private BonusesSettings _settings;
         
+        /**
+         * Cached bonus pickable objects
+         */
         private List<BonusPickable> _cachedBonuses = new List<BonusPickable>();
 
+        /**
+         * Container for storing cached bonus pickable objects
+         */
         private Transform _cachedBonusesContainer;
         
         private List<BonusDBEntry> _bonusesDBEntries = new List<BonusDBEntry>();

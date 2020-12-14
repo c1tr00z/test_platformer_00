@@ -1,13 +1,14 @@
 using c1tr00z.AssistLib.ResourcesManagement;
 
 namespace Bonuses.Code {
+    /**
+     * Executable bonus object. Contian link to bonus DBEntry
+     */
     public abstract class Bonus {
 
         #region Accessors
 
         public BonusDBEntry dbEntry { get; private set; }
-        
-        public BonusesController controller { get; private set; }
 
         #endregion
 
@@ -15,7 +16,6 @@ namespace Bonuses.Code {
 
         public Bonus(BonusDBEntry dbEntry, BonusesController controller) {
             this.dbEntry = dbEntry;
-            this.controller = controller;
         }
 
         #endregion
@@ -28,6 +28,9 @@ namespace Bonuses.Code {
 
     }
 
+    /**
+     * <summary>Generic version of bonus for easier access to data</summary>
+     */
     public abstract class Bonus<T> : Bonus where T : BonusDBEntry {
 
         #region Accessors

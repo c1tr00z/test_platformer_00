@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
     /**
-     * <summary>Main gameplay controller</summary>
+     * <summary>Main gameplay controller. Controls base gameplay elements (player energy, level calm mode timer, etc)</summary>
      */
     public class GameplayController : Module {
 
@@ -47,6 +47,10 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public GameplaySettings settings => DBEntryUtils.GetCached(ref _settings);
         
+        /**
+         * Required by specs. Countdowns from value from GameplatSettings.calmModeSeconds and when its 0 then
+         * level starts to spawn dangerous level pieces. 
+         */
         public Timer calmModeTimer { get; private set; }
 
         public float energy {

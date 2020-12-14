@@ -5,6 +5,10 @@ using c1tr00z.AssistLib.Utils;
 using UnityEngine;
 
 namespace c1tr00z.TestPlatformer.Level {
+    /**
+     * <summary>Main class for level subsystem. Generates level on full random (except when in calm mode).
+     * Reuses level pieces, doesnt recreates them.</summary>
+     */
     public class Level : MonoBehaviour {
 
         #region Private Fields
@@ -89,6 +93,9 @@ namespace c1tr00z.TestPlatformer.Level {
             _piecesDBEntries = DB.GetAll<LevelPieceRegularDBEntry>();
         }
 
+        /**
+         * <summary>Pick next level piece. If there is no free pieces of this DBEntry then creates new.</summary>
+         */
         public void GenerateStartPieces() {
             _startPiece = DB.GetAll<LevelPieceStartDBEntry>().FirstOrDefault()
                 .LoadPrefab<LevelPieceStart>().Clone(transform);
@@ -104,6 +111,9 @@ namespace c1tr00z.TestPlatformer.Level {
             currentLevelPiece = startPiece;
         }
 
+        /**
+         * <summary>If there is no free pieces of this DBEntry then creates new.</summary>
+         */
         private LevelPiece GetLevelPieceByDBEntry(LevelPieceRegularDBEntry dbEntry) {
             LevelPiece levelPiece;
             if (_cachedPieces.ContainsKey(dbEntry)) {
@@ -123,6 +133,9 @@ namespace c1tr00z.TestPlatformer.Level {
             return levelPiece;
         }
 
+        /**
+         * <summary>Returns level piece back to pool</summary>
+         */
         private void ReturnToPool(LevelPiece levelPiece) {
             if (levelPiece == null) {
                 return;
@@ -141,6 +154,9 @@ namespace c1tr00z.TestPlatformer.Level {
             _cachedPieces.Add(dbEntry, list);
         }
 
+        /**
+         * <summary>Calls when player enters new level piece. All prev pieces goes back to pool, and new adds.</summary>
+         */
         private void LevelPieceOnEntered(LevelPiece levelPiece) {
             passedPieces.ForEach(ReturnToPool);
             passedPieces.Clear();
@@ -155,6 +171,9 @@ namespace c1tr00z.TestPlatformer.Level {
             lastGeneratedPiece.Place();
         }
 
+        /**
+         * <summary>Rolls every level object back. Calls when LevelRollbackManager decides it.</summary>
+         */
         public void MovePiecesBack(float value) {
             LevelPiece currentPiece = null;
             _currentPieces.ForEach(p => {
@@ -167,10 +186,18 @@ namespace c1tr00z.TestPlatformer.Level {
             });
         }
 
+        /**
+         * <summary>Sets calm mode. When in calm mode - spawns only Regular (normal, plain, without any perils.
+         * When it exists calm mode - next level piece is random.</summary>
+         */
         public void SetCalmMode(bool calmMode) {
             isCalmMode = calmMode;
         }
 
+        /**
+         * <summary>Gets next random level piece. When in calm mode - returns only Regular (normal, plain, without any perils.
+         * When it exists calm mode - next level piece is random.</summary>
+         */
         private LevelPieceRegularDBEntry GetRandomPiece() {
             if (isCalmMode) {
                 return _piecesDBEntries.RandomItem(p => p.type == LevelPieceType.Regular);

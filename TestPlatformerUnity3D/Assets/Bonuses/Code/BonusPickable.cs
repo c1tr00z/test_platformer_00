@@ -1,4 +1,3 @@
-using System;
 using c1tr00z.AssistLib.AppModules;
 using c1tr00z.AssistLib.ResourcesManagement;
 using c1tr00z.AssistLib.Utils;
@@ -7,6 +6,9 @@ using c1tr00z.TestPlatformer.Level;
 using UnityEngine;
 
 namespace Bonuses.Code {
+    /**
+     * Spawnable object of bonus. When player interacts with trigger - linked bonus will be added to BonusController
+     */
     public abstract class BonusPickable : MonoBehaviour {
         
         #region Private Fields

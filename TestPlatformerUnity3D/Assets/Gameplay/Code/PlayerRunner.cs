@@ -7,6 +7,9 @@ using c1tr00z.TestPlatformer.Common;
 using UnityEngine;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
+    /**
+     * <summary>Main player class. Interacts with level design elements, enemies, scene objects and bonuses</summary>
+     */
     public class PlayerRunner : MonoBehaviour, IDamageable {
 
         #region Events
