@@ -16,6 +16,7 @@ MonoBehaviour:
   - Bomb
   - Bonuses/Indestructable
   - Bonuses/RestoreEnergy
+  - Bonuses/SpeedUp
   - BonusesSettings
   - BonusesUIFrame
   - BonusListItem

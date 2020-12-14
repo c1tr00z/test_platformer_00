@@ -56,6 +56,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public Transform rootObject => _rootObject;
 
+        public float speed { get; private set; }
+
         #endregion
 
         #region Unity Events
@@ -64,6 +66,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             PlayerSpawned?.Invoke(this);
             isRunning = false;
             rigidbody2D.bodyType = RigidbodyType2D.Static;
+            speed = gameplaySettings.playerSpeed;
         }
 
         private void Update() {
@@ -95,7 +98,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
             //Keeping constant horizontal velocity
             var currentVelocity = rigidbody2D.velocity;
-            currentVelocity.x = gameplaySettings.playerSpeed;
+            currentVelocity.x = speed;
             rigidbody2D.velocity = currentVelocity;
         }
 
@@ -127,6 +130,10 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             var toRemove = _effects.Where(e => e.timeLeft <= 0 && e.IsCanBeFinished(this)).ToList();
             toRemove.ForEach(e => e.Finish(this));
             _effects.RemoveRange(toRemove);
+        }
+
+        public void SetSpeed(float newSpeed) {
+            speed = newSpeed;
         }
 
         #endregion
