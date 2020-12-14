@@ -7,7 +7,7 @@ namespace Bonuses.Code.SpeedUp {
 
         #region Bonus Implementation
 
-        public BonusSpeedUp(BonusDBEntry dbEntry, BonusesController controller) : base(dbEntry, controller) {
+        public BonusSpeedUp(BonusDBEntry dbEntry) : base(dbEntry) {
         }
 
         public override void Activate() {

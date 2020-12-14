@@ -109,7 +109,9 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         }
 
         public void Finish() {
-            _finishFrame.Show();
+            _finishFrame.Show(new GameplayResult {
+                distance = player.distance
+            });
             player.FullStop();
         }
 

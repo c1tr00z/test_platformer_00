@@ -6,7 +6,7 @@ namespace Bonuses.Code {
 
         #region Bonus Implementation
 
-        public BonusRestoreEnergy(BonusDBEntry dbEntry, BonusesController controller) : base(dbEntry, controller) {
+        public BonusRestoreEnergy(BonusDBEntry dbEntry) : base(dbEntry) {
             
         }
 

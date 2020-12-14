@@ -6,7 +6,10 @@ namespace Bonuses.Code {
         #region BonusPickable Implementation
 
         protected override Bonus GetBonusInstance() {
-            return (T) Activator.CreateInstance(typeof(T), dbEntry);
+            var args = new[] {
+                dbEntry
+            };
+            return (T) Activator.CreateInstance(typeof(T), args);
         }
 
         #endregion

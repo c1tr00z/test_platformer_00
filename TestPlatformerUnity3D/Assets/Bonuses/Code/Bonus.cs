@@ -14,7 +14,7 @@ namespace Bonuses.Code {
 
         #region Constructors
 
-        public Bonus(BonusDBEntry dbEntry, BonusesController controller) {
+        public Bonus(BonusDBEntry dbEntry) {
             this.dbEntry = dbEntry;
         }
 
@@ -41,7 +41,7 @@ namespace Bonuses.Code {
 
         #region Bonus Implementation
 
-        protected Bonus(BonusDBEntry dbEntry, BonusesController controller) : base(dbEntry, controller) {
+        protected Bonus(BonusDBEntry dbEntry) : base(dbEntry) {
         }
 
         #endregion

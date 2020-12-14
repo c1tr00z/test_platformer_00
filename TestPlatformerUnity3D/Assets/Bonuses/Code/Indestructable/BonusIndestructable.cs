@@ -7,7 +7,7 @@ namespace Bonuses.Code {
 
         #region Bonus Implementation
 
-        public BonusIndestructable(BonusDBEntry dbEntry, BonusesController controller) : base(dbEntry, controller) {
+        public BonusIndestructable(BonusDBEntry dbEntry) : base(dbEntry) {
         }
 
         public override void Activate() {

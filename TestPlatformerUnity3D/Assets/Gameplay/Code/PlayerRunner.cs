@@ -36,6 +36,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         private Life _life;
 
+        private Vector3 _lastPosition;
+
         #endregion
 
         #region Serialized Fields
@@ -60,6 +62,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         public Transform rootObject => _rootObject;
 
         public float speed { get; private set; }
+        
+        public float distance { get; private set; }
 
         #endregion
 
@@ -75,6 +79,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         private void Update() {
             CheckSpeed();
             CheckEffects();
+            CheckDistance();
         }
 
         #endregion
@@ -91,6 +96,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public void Run() {
             rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            _lastPosition = transform.position;
             isRunning = true;
         }
 
@@ -137,6 +143,20 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public void SetSpeed(float newSpeed) {
             speed = newSpeed;
+        }
+
+        public void CheckDistance() {
+            if (!isRunning) {
+                return;
+            }
+
+            var newPosition = transform.position;
+            distance += (newPosition - _lastPosition).x;
+            _lastPosition = newPosition;
+        }
+
+        public void ResetAfterRollback() {
+            _lastPosition = transform.position;
         }
 
         #endregion

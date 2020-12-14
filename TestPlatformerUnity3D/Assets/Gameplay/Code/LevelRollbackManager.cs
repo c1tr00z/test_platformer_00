@@ -48,7 +48,9 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             }
             
             gameplayController.level.MovePiecesBack(moveBackValue);
+            player.CheckDistance();
             player.transform.position -= new Vector3(moveBackValue, 0, 0);
+            player.ResetAfterRollback();
         }
 
         #endregion
