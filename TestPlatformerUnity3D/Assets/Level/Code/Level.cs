@@ -41,6 +41,8 @@ namespace c1tr00z.TestPlatformer.Level {
                 _startPiece = value;
             }
         }
+        
+        public bool isCalmMode { get; private set; }
 
         public LevelGeneratingSettings levelGeneratingSettings => DBEntryUtils.GetCached(ref _levelGeneratingSettings);
 
@@ -93,7 +95,7 @@ namespace c1tr00z.TestPlatformer.Level {
             _startPiece.transform.Reset();
             lastGeneratedPiece = _startPiece;
             new [] {levelGeneratingSettings.startPiecesCount}.Iterate(i => {
-                var levelPiece = GetLevelPieceByDBEntry(_piecesDBEntries.RandomItem());
+                var levelPiece = GetLevelPieceByDBEntry(GetRandomPiece());
                 levelPiece.transform.position = lastGeneratedPiece.pieceFinishPoint.position;
                 levelPiece.Place();
                 _currentPieces.Add(levelPiece);
@@ -144,7 +146,7 @@ namespace c1tr00z.TestPlatformer.Level {
             passedPieces.Clear();
             passedPieces.Add(currentLevelPiece);
             currentLevelPiece = levelPiece;
-            var newGeneratedPiece = GetLevelPieceByDBEntry(_piecesDBEntries.RandomItem());
+            var newGeneratedPiece = GetLevelPieceByDBEntry(GetRandomPiece());
             var pieceTransform = newGeneratedPiece.transform;
             pieceTransform.SetParent(transform);
             pieceTransform.position = lastGeneratedPiece.pieceFinishPoint.position;
@@ -163,6 +165,18 @@ namespace c1tr00z.TestPlatformer.Level {
                 }
                 currentPiece = p;
             });
+        }
+
+        public void SetCalmMode(bool calmMode) {
+            isCalmMode = calmMode;
+        }
+
+        private LevelPieceRegularDBEntry GetRandomPiece() {
+            if (isCalmMode) {
+                return _piecesDBEntries.RandomItem(p => p.type == LevelPieceType.Regular);
+            }
+
+            return _piecesDBEntries.RandomItem();
         }
         
         #endregion

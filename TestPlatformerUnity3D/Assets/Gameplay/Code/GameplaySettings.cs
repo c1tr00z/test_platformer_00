@@ -14,7 +14,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public float energyReplenishSpeed;
 
-        public float clickToDestructablePrice;
+        public float calmModeSeconds;
 
         #endregion
 

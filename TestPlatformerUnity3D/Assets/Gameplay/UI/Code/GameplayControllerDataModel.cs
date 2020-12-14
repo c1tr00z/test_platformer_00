@@ -18,16 +18,22 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public float energyValue => energy / maxEnergy;
 
+        public bool isCalmMode => gameplayController.level.isCalmMode;
+
+        public Timer calmModeTimer => gameplayController.calmModeTimer;
+
         #endregion
 
         #region Unity Events
 
         private void OnEnable() {
             GameplayController.EnergyChanged += OnDataChanged;
+            GameplayController.Updated += OnDataChanged;
         }
 
         private void OnDisable() {
             GameplayController.EnergyChanged -= OnDataChanged;
+            GameplayController.Updated -= OnDataChanged;
         }
 
         #endregion

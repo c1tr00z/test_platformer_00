@@ -15,6 +15,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public static event Action EnergyChanged;
 
+        public static event Action Updated;
+
         #endregion
 
         #region Private Fields
@@ -44,6 +46,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         public PlayerRunner player { get; private set; }
 
         public GameplaySettings settings => DBEntryUtils.GetCached(ref _settings);
+        
+        public Timer calmModeTimer { get; private set; }
 
         public float energy {
             get => _energy;
@@ -76,6 +80,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         private void Update() {
             TickEnergy();
+            CheckCalmModeTimer();
         }
 
         #endregion
@@ -84,6 +89,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         private void Init() {
             _startFrame.Show();
+            level.SetCalmMode(true);
             level.Init();
             player = DB.Get<PlayerDBEntry>().LoadPrefab<PlayerRunner>().Clone();
             player.transform.position = level.startPiece.startPoint.position;
@@ -93,6 +99,9 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             energy = maxEnergy;
             _playFrame.Show();
             player.Run();
+            calmModeTimer = new Timer();
+            calmModeTimer.Start(settings.calmModeSeconds);
+            Updated?.Invoke();
         }
 
         public void Finish() {
@@ -126,6 +135,27 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             if (life == player.GetLife()) {
                 Finish();
             }
+        }
+
+        private void CheckCalmModeTimer() {
+
+            if (!level.isCalmMode) {
+                return;
+            }
+            
+            if (calmModeTimer == null) {
+                return;
+            }
+            
+            calmModeTimer.Tick();
+
+            if (calmModeTimer.IsRunning) {
+                return;
+            }
+            
+            level.SetCalmMode(false);
+            
+            Updated?.Invoke();
         }
 
         #endregion

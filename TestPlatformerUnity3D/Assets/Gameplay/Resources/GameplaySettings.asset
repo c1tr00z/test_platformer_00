@@ -16,3 +16,4 @@ MonoBehaviour:
   maxEnergy: 10
   energyReplenishSpeed: 0.5
   clickToDestructablePrice: 0
+  calmModeSeconds: 3
