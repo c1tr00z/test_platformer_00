@@ -1,4 +1,8 @@
 namespace c1tr00z.TestPlatformer.Gameplay {
+    /**
+     * Base class for player modifiers. Allows to add some temporal modifiers. Processing and checking how much time
+     * left happening in <see cref="PlayerRunner"/>
+     */
     public abstract class PlayerEffect {
 
         #region Public Fields

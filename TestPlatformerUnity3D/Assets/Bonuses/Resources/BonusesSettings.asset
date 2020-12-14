@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BonusesSettings
   m_EditorClassIdentifier: 
   maxBonusesCount: 3
-  bonusChance: 0.3
+  bonusChance: 0.5

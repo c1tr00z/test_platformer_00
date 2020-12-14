@@ -1,10 +1,11 @@
-using System;
 using c1tr00z.AssistLib.Utils;
-using c1tr00z.TestPlatformer.Level;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
+    /**
+     * Enemy class
+     */
     public class Enemy : MonoBehaviour, IDamageable {
 
         #region Private Fields
@@ -77,6 +78,9 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         #region Class Implementation
 
+        /**
+         * <summary>Checks if enemy should move from side to side. Randomizes timings for this action.</summary>
+         */
         private void CheckMovement() {
             if (_isMoving) {
                 if (Time.time - _startMovingTime < _movingTime) {

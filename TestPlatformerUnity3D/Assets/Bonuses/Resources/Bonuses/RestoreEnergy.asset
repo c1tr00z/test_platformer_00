@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66595326db1c489c9b8c36c919ff8737, type: 3}
   m_Name: RestoreEnergy
   m_EditorClassIdentifier: 
+  title: Energy
   value: 7

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6b6bc08d8146f2957f8d16d590457b, type: 3}
-  m_Name: IcePond
+  m_Script: {fileID: 11500000, guid: 16ed94fb0a884627b7be69285701f394, type: 3}
+  m_Name: Indestructable
   m_EditorClassIdentifier: 
-  title: Ice Pond
-  energyPrice: 3
-  cooldownSeconds: 1
-  time: 1
+  title: Shield
+  time: 5

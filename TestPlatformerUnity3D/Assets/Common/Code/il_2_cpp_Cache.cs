@@ -9,6 +9,7 @@ public class il_2_cpp_Cache : c1tr00z.AssistLib.PropertyReferences.PropertyRefer
 		Cache<System.Single>();
 		Cache<System.Collections.Generic.List<Bonuses.Code.Bonus>>();
 		Cache<UnityEngine.Color>();
+		Cache<System.String>();
 		
 	}
 }

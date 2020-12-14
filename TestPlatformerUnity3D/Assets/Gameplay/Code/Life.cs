@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
+    /**
+     * <summary>Dedicated class for controlling damageable objects's life in gameplay </summary>
+     */
     public class Life : MonoBehaviour {
 
         #region Events
