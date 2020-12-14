@@ -4,5 +4,6 @@ namespace c1tr00z.TestPlatformer.Level {
         Pit,
         Wall,
         Slide,
+        Enemy,
     }
 }

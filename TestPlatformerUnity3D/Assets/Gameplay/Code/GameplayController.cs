@@ -62,6 +62,14 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         #region Unity Events
 
+        private void OnEnable() {
+            Life.Died += LifeOnDied;
+        }
+
+        private void OnDisable() {
+            Life.Died -= LifeOnDied;
+        }
+
         private void Start() {
             Init();
         }
@@ -112,6 +120,12 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public void AddEnergy(float additionalValue) {
             energy += additionalValue;
+        }
+
+        private void LifeOnDied(Life life) {
+            if (life == player.GetLife()) {
+                Finish();
+            }
         }
 
         #endregion

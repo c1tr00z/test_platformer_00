@@ -7,7 +7,7 @@ using c1tr00z.TestPlatformer.Common;
 using UnityEngine;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
-    public class PlayerRunner : MonoBehaviour {
+    public class PlayerRunner : MonoBehaviour, IDamageable {
 
         #region Events
 
@@ -31,6 +31,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         
         private List<PlayerEffect> _effects = new List<PlayerEffect>();
 
+        private Life _life;
+
         #endregion
 
         #region Serialized Fields
@@ -47,8 +49,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         private GameplaySettings gameplaySettings => DBEntryUtils.GetCached(ref _gameplaySettings);
 
-        public bool isRunning {//Checking if character can run and rigidbody not kinematic
-            get => _isRunning && !rigidbody2D.isKinematic;
+        public bool isRunning {//Checking if character can run and rigidbody is dynamic
+            get => _isRunning && rigidbody2D.bodyType == RigidbodyType2D.Dynamic;
             private set => _isRunning = value;
         }
 
@@ -61,7 +63,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         private void Awake() {
             PlayerSpawned?.Invoke(this);
             isRunning = false;
-            rigidbody2D.isKinematic = true;
+            rigidbody2D.bodyType = RigidbodyType2D.Static;
         }
 
         private void Update() {
@@ -71,10 +73,18 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         #endregion
 
+        #region IDamageable Implementation
+
+        public Life GetLife() {
+            return this.GetCachedComponent(ref _life);
+        }
+
+        #endregion
+
         #region Class Implementation
 
         public void Run() {
-            rigidbody2D.isKinematic = false;
+            rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
             isRunning = true;
         }
 
@@ -91,7 +101,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public void FullStop() {
             isRunning = false;
-            rigidbody2D.isKinematic = true;
+            rigidbody2D.bodyType = RigidbodyType2D.Static;
         }
 
         public void StopRunning() {

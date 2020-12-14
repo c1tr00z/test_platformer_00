@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 9185759728643167958}
   - component: {fileID: 3539873651767806382}
   - component: {fileID: 2831499658279160519}
+  - component: {fileID: 2700156150360968147}
   m_Layer: 0
   m_Name: Player@Prefab
   m_TagString: Player
@@ -345,6 +346,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2700156150360968147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738815423318253104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de489a3c0ae470dafddb183d82fabea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _onDied:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  maxLife: 1
+  indestructable: 0
 --- !u!1 &8867478531100116136
 GameObject:
   m_ObjectHideFlags: 0

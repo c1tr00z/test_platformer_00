@@ -27,6 +27,7 @@ MonoBehaviour:
   - Modules/Input
   - Modules/Scenes
   - Modules/UI
+  - Pieces/LevelPieceEnemy00
   - Pieces/LevelPieceRegular00
   - Pieces/LevelPiecPit00
   - Pieces/LevelPiecWall00
