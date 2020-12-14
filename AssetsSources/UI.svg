@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.55679477"
-     inkscape:cx="514.052"
-     inkscape:cy="906.44285"
+     inkscape:cx="446.84632"
+     inkscape:cy="787.90589"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -100,6 +100,44 @@
            x="58.543842"
            y="281.3125"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.0734px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#00ff00;stroke-width:0.411016">+</tspan></text>
+    </g>
+    <g
+       id="g1467"
+       inkscape:export-filename="/Users/c1tr00z/Downloads/g1467.png"
+       inkscape:export-xdpi="48.537682"
+       inkscape:export-ydpi="48.537682">
+      <path
+         id="rect1460"
+         style="opacity:0.98;fill:#5f8dd3;stroke:none;stroke-width:0.459999"
+         transform="rotate(-45)"
+         d="m -78.979252,260.75833 37.635529,9.40828 9.408283,37.63553 c -16.443529,9.40118 -41.667438,16.83613 -56.772423,9.72861 -7.892271,-14.66944 0.181365,-39.86714 9.728611,-56.77242 z"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         id="path1463"
+         style="opacity:0.98;fill:#803300;stroke:none;stroke-width:0.339256"
+         d="m 137.26878,243.78264 24.53343,-14.72056 24.53344,14.72056 c -3.6726,13.47807 -12.94957,30.50972 -24.53344,34.68042 -11.76597,-3.53431 -20.6962,-20.88537 -24.53343,-34.68042 z"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <g
+       id="g1475"
+       inkscape:export-filename="/Users/c1tr00z/Downloads/g1475.png"
+       inkscape:export-xdpi="59.27"
+       inkscape:export-ydpi="59.27"
+       transform="translate(22.809123,165.36614)">
+      <circle
+         style="opacity:0.98;fill:#333333;stroke:none;stroke-width:0.459999"
+         id="path1469"
+         cx="148.85329"
+         cy="159.30746"
+         r="23.403109" />
+      <rect
+         style="opacity:0.98;fill:#333333;stroke:none;stroke-width:0.459999"
+         id="rect1471"
+         width="13.542916"
+         height="16.156462"
+         x="211.13142"
+         y="-50.452305"
+         transform="rotate(51.12029)" />
     </g>
   </g>
 </svg>

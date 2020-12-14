@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using c1tr00z.AssistLib.Utils;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -99,6 +100,10 @@ namespace c1tr00z.TestPlatformer.Gameplay {
                     _isMoving = true;
                 }
             }
+        }
+
+        public void OnDie() {
+            Destroy(gameObject);
         }
 
         #endregion

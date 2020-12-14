@@ -128,8 +128,9 @@ GameObject:
   - component: {fileID: 3753034937604196691}
   - component: {fileID: 880307500618009528}
   - component: {fileID: 859508691779560167}
+  - component: {fileID: 5278960892410981403}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: SlimeEnemy@Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +204,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _onDied:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 898775245297685223}
+        m_MethodName: OnDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   maxLife: 1
@@ -229,3 +241,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5278960892410981403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964876072295917245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346d22f5a26d8fc4fb2a73011e13df1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dbEntry: {fileID: 11400000, guid: 8483a7bad59314aa4a98d4cfeeb7d663, type: 2}
+  _key: Prefab
