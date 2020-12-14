@@ -11,7 +11,7 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public void TryFall(Collider2D other) {
             if (other.gameObject.CompareTag(PlayerRunner.PLAYER_RUNNER_TAG)) {
-                Fall(other.GetComponent<PlayerRunner>());
+                Fall(other.GetComponentInParent<PlayerRunner>());
             }
         }
 

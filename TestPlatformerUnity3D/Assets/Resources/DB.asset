@@ -17,6 +17,7 @@ MonoBehaviour:
   - FinishFrame
   - GameplaySettings
   - GameScene
+  - IcePond
   - JumpPod
   - LevelGeneratingSettings
   - MainLayer

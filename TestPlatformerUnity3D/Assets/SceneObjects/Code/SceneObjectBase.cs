@@ -36,7 +36,7 @@ namespace c1tr00z.TestPlatformer.SceneObjects {
 
         private void OnTriggerEnter2D(Collider2D other) {
             if (other.gameObject.CompareTag(PlayerRunner.PLAYER_RUNNER_TAG)) {
-                Interact(other.GetComponent<PlayerRunner>());
+                Interact(other.GetComponentInParent<PlayerRunner>());
             }
         }
 

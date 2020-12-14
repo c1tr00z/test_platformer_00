@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="400"
-     inkscape:cy="560"
+     inkscape:zoom="0.55679477"
+     inkscape:cx="429.64029"
+     inkscape:cy="696.31157"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -70,5 +70,10 @@
        inkscape:export-filename="/Users/c1tr00z/Downloads/Jump.png"
        inkscape:export-xdpi="18.063122"
        inkscape:export-ydpi="18.063122" />
+    <path
+       style="fill:#00ffff;stroke:none;stroke-width:0.26458300000000001px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 46.869048,219.98214 c -4.554047,6.99106 -34.77381,0 -27.214286,21.16667 7.559524,21.16667 16.438793,15.43105 21.922619,21.16666 5.483826,5.73561 4.798175,10.98315 11.339285,12.85119 6.54111,1.86804 22.678572,4.53572 22.678572,-6.80357 0,-11.33929 16.630952,-11.33928 21.166667,-21.92262 4.535715,-10.58334 7.559525,-37.04166 -6.803573,-36.28571 -14.363096,0.75595 -16.630951,-15.11905 -24.190475,-15.11905 -7.559524,0 -8.315477,7.55952 -15.119048,9.82738 -6.803571,2.26786 0.774286,8.12799 -3.779761,15.11905 z"
+       id="path1445"
+       sodipodi:nodetypes="zzzzzzzzzz" />
   </g>
 </svg>

@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using c1tr00z.AssistLib.ResourcesManagement;
 using c1tr00z.AssistLib.Utils;
+using c1tr00z.TestPlatformer.Common;
 using UnityEngine;
 
 namespace c1tr00z.TestPlatformer.Gameplay {
@@ -25,6 +28,16 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         private GameplaySettings _gameplaySettings;
 
         private bool _isRunning;
+        
+        private List<PlayerEffect> _effects = new List<PlayerEffect>();
+
+        #endregion
+
+        #region Serialized Fields
+
+        [SerializeField] private Transform _rootObject;
+
+        [SerializeField] private Transform _headRaycastPoint;
 
         #endregion
 
@@ -39,6 +52,8 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             private set => _isRunning = value;
         }
 
+        public Transform rootObject => _rootObject;
+
         #endregion
 
         #region Unity Events
@@ -49,8 +64,9 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             rigidbody2D.isKinematic = true;
         }
 
-        private void LateUpdate() {
+        private void Update() {
             CheckSpeed();
+            CheckEffects();
         }
 
         #endregion
@@ -80,6 +96,27 @@ namespace c1tr00z.TestPlatformer.Gameplay {
 
         public void StopRunning() {
             isRunning = false;
+        }
+
+        public void AddEffect(PlayerEffect effect) {
+            effect.Start(this);
+            _effects.Add(effect);
+        }
+
+        public bool IsNothingAboveHead() {
+            
+            var layerMask = (1 << GameLayers.WALL_LAYER);
+            
+            var raycastHit = Physics2D.Raycast(_headRaycastPoint.position, Vector2.up, 2, layerMask);
+
+            return !raycastHit.collider.IsAssigned();
+        }
+
+        private void CheckEffects() {
+            _effects.ForEach(e => e.timeLeft -= Time.deltaTime);
+            var toRemove = _effects.Where(e => e.timeLeft <= 0 && e.IsCanBeFinished(this)).ToList();
+            toRemove.ForEach(e => e.Finish(this));
+            _effects.RemoveRange(toRemove);
         }
 
         #endregion
