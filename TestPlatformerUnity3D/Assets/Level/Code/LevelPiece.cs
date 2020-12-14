@@ -13,6 +13,8 @@ namespace c1tr00z.TestPlatformer.Level {
         
         public static event Action<LevelPiece> Hidden;
 
+        public static event Action<LevelPiece> Placed; 
+
         #endregion
 
         #region Readonly Fields
@@ -31,6 +33,8 @@ namespace c1tr00z.TestPlatformer.Level {
 
         [SerializeField] private Transform _pieceFinishPoint;
 
+        [SerializeField] private Transform _bonusPoint;
+
         #endregion
 
         #region Accessors
@@ -40,6 +44,8 @@ namespace c1tr00z.TestPlatformer.Level {
         public Transform pieceFinishPoint => _pieceFinishPoint;
 
         public LevelPieceBaseDBEntry dbEntry => dbEntryResource.parent as LevelPieceBaseDBEntry;
+
+        public Transform bonusPoint => _bonusPoint;
 
         #endregion
 
@@ -57,6 +63,10 @@ namespace c1tr00z.TestPlatformer.Level {
 
         public void Hide() {
             Hidden?.Invoke(this);
+        }
+
+        public void Place() {
+            Placed?.Invoke(this);
         }
 
         #endregion

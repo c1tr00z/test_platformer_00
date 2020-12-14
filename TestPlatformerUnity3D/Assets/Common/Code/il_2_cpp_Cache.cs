@@ -5,9 +5,10 @@ public class il_2_cpp_Cache : c1tr00z.AssistLib.PropertyReferences.PropertyRefer
 		Cache<System.Collections.Generic.List<c1tr00z.TestPlatformer.SceneObjects.SceneObjectDBEntry>>();
 		Cache<c1tr00z.TestPlatformer.SceneObjects.SceneObjectDBEntry>();
 		Cache<System.Object>();
-		Cache<System.Single>();
-		Cache<UnityEngine.Color>();
 		Cache<UnityEngine.Sprite>();
+		Cache<System.Single>();
+		Cache<System.Collections.Generic.List<Bonuses.Code.Bonus>>();
+		Cache<UnityEngine.Color>();
 		
 	}
 }

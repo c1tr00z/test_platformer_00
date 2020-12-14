@@ -95,6 +95,7 @@ namespace c1tr00z.TestPlatformer.Level {
             new [] {levelGeneratingSettings.startPiecesCount}.Iterate(i => {
                 var levelPiece = GetLevelPieceByDBEntry(_piecesDBEntries.RandomItem());
                 levelPiece.transform.position = lastGeneratedPiece.pieceFinishPoint.position;
+                levelPiece.Place();
                 _currentPieces.Add(levelPiece);
                 lastGeneratedPiece = levelPiece;
             });
@@ -105,7 +106,7 @@ namespace c1tr00z.TestPlatformer.Level {
             LevelPiece levelPiece;
             if (_cachedPieces.ContainsKey(dbEntry)) {
                 var list = _cachedPieces[dbEntry];
-                levelPiece = list.RandomItem();
+                levelPiece = list.FirstOrDefault();
 
                 if (levelPiece.IsAssigned()) {
                     list.Remove(levelPiece);
@@ -149,6 +150,7 @@ namespace c1tr00z.TestPlatformer.Level {
             pieceTransform.position = lastGeneratedPiece.pieceFinishPoint.position;
             _currentPieces.Add(newGeneratedPiece);
             lastGeneratedPiece = newGeneratedPiece;
+            lastGeneratedPiece.Place();
         }
 
         public void MovePiecesBack(float value) {

@@ -48,11 +48,10 @@ namespace c1tr00z.TestPlatformer.Gameplay {
         public float energy {
             get => _energy;
             set {
-                if (value > maxEnergy) {
+                if (value > _energy && _energy >= maxEnergy) {
                     return;
                 }
-
-                _energy = Mathf.Min(maxEnergy, value);
+                _energy = Mathf.Max(Mathf.Min(maxEnergy, value), 0);
                 EnergyChanged?.Invoke();
             }
         }
@@ -109,6 +108,10 @@ namespace c1tr00z.TestPlatformer.Gameplay {
             energy -= value;
 
             return true;
+        }
+
+        public void AddEnergy(float additionalValue) {
+            energy += additionalValue;
         }
 
         #endregion

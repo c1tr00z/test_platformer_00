@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: DB
   m_EditorClassIdentifier: 
   paths:
+  - BonusesSettings
+  - BonusesUIFrame
+  - BonusListItem
   - DB
   - FinishFrame
   - GameplaySettings
@@ -31,6 +34,7 @@ MonoBehaviour:
   - Pieces/StartPiece
   - Player
   - PlayFrame
+  - RestoreEnergy
   - SceneObjectListItem
   - SceneObjectsUIFrame
   - StartFrame

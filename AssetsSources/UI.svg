@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.55679477"
-     inkscape:cx="429.64029"
-     inkscape:cy="696.31157"
+     inkscape:cx="514.052"
+     inkscape:cy="906.44285"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -71,9 +71,35 @@
        inkscape:export-xdpi="18.063122"
        inkscape:export-ydpi="18.063122" />
     <path
-       style="fill:#00ffff;stroke:none;stroke-width:0.26458300000000001px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 46.869048,219.98214 c -4.554047,6.99106 -34.77381,0 -27.214286,21.16667 7.559524,21.16667 16.438793,15.43105 21.922619,21.16666 5.483826,5.73561 4.798175,10.98315 11.339285,12.85119 6.54111,1.86804 22.678572,4.53572 22.678572,-6.80357 0,-11.33929 16.630952,-11.33928 21.166667,-21.92262 4.535715,-10.58334 7.559525,-37.04166 -6.803573,-36.28571 -14.363096,0.75595 -16.630951,-15.11905 -24.190475,-15.11905 -7.559524,0 -8.315477,7.55952 -15.119048,9.82738 -6.803571,2.26786 0.774286,8.12799 -3.779761,15.11905 z"
+       style="fill:#00ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 43.067528,141.57578 c -4.554047,6.99106 -34.7738104,0 -27.214286,21.16667 7.559524,21.16667 16.438793,15.43105 21.922619,21.16666 5.483826,5.73561 4.798175,10.98315 11.339285,12.85119 6.54111,1.86804 22.678572,4.53572 22.678572,-6.80357 0,-11.33929 16.630952,-11.33928 21.166667,-21.92262 4.535715,-10.58334 7.559525,-37.04166 -6.803573,-36.28571 -14.363096,0.75595 -16.630951,-15.11905 -24.190475,-15.11905 -7.559524,0 -8.315477,7.55952 -15.119048,9.82738 -6.803571,2.26786 0.774286,8.12799 -3.779761,15.11905 z"
        id="path1445"
-       sodipodi:nodetypes="zzzzzzzzzz" />
+       sodipodi:nodetypes="zzzzzzzzzz"
+       inkscape:export-filename="/Users/c1tr00z/Downloads/IcePond.png"
+       inkscape:export-xdpi="39.610001"
+       inkscape:export-ydpi="39.610001" />
+    <g
+       id="g1458"
+       inkscape:export-filename="/Users/c1tr00z/Downloads/RestoreEnergy.png"
+       inkscape:export-xdpi="70.279999"
+       inkscape:export-ydpi="70.279999">
+      <circle
+         style="opacity:0.98;fill:#ffff00;stroke:none;stroke-width:0.459999"
+         id="path1447"
+         cx="60.349133"
+         cy="260.40414"
+         r="21.383553" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:16.4406px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.411016"
+         x="58.543842"
+         y="281.3125"
+         id="text1453"><tspan
+           sodipodi:role="line"
+           id="tspan1451"
+           x="58.543842"
+           y="281.3125"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.0734px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#00ff00;stroke-width:0.411016">+</tspan></text>
+    </g>
   </g>
 </svg>
