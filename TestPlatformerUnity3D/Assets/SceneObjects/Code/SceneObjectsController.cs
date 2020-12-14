@@ -105,8 +105,6 @@ namespace c1tr00z.TestPlatformer.SceneObjects {
             }
             
             _coolDowns[activeSceneObject] = activeSceneObject.cooldownSeconds;
-
-            activeSceneObject = null;
         }
 
         private void UpdateCooldowns() {
